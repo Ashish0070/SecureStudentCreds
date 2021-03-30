@@ -1,0 +1,61 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/ShareFiles.sol": "ShareFiles"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/FileContract.sol": {
+			"keccak256": "0x6b085658339f6bb76571e53d9658dac92af99057c335be9a84e9051123429342",
+			"license": "CC-BY-SA-4.0",
+			"urls": [
+				"bzz-raw://72c9fb265086d388df24dfed7e8ae6da43a9a440d1273f938d41a34dbf5ccd84",
+				"dweb:/ipfs/QmQzVnxZfx9iJjj1AaQ2DxDRJQ2fvvFK7CmUoiYmGLaM6j"
+			]
+		},
+		"contracts/ShareFiles.sol": {
+			"keccak256": "0x63e3669744a1838418f9c11f48920155b1d11d78109da6a58dda5c4fe7f9eec9",
+			"license": "CC-BY-SA-4.0",
+			"urls": [
+				"bzz-raw://c85f70ce1c4cd9fb810fb6bf35eff3fd072c1d918c0b500dec5a168d4b7dbc98",
+				"dweb:/ipfs/QmRexh1n5YKdsUSJb7Q7jAuAyB4SRiynGqaf8Gn3UZQ8Mq"
+			]
+		},
+		"contracts/Student.sol": {
+			"keccak256": "0x09184507c56fcd78394797828e5fc72c5819fae8b17b95db8db603142886cc89",
+			"license": "CC-BY-SA-4.0",
+			"urls": [
+				"bzz-raw://6831d833121f60c7af994cf9c63e76dc9524f941a7bf54f784fa73b848448c76",
+				"dweb:/ipfs/Qmcbrtz5F3DyS6ytRQ7VTynaqZfu7N78Hg7unwndpTxUbU"
+			]
+		}
+	},
+	"version": 1
+}
