@@ -12,43 +12,35 @@ contract FileContract {
         bytes ipfsHash;
         string title;
         string description;
-        address owner;
     }
     
-    File[] ownerToFiles;
-    uint curr = 0;
+    File[] public ownerToFiles;
+    mapping(address => uint) public filesUnderOwner;
+    mapping(uint => address) public ownerOfFiles;
+    mapping(address => uint) public fileCount;
+    uint curr;
     
     function uploadFile(bytes memory ipfsHash, string memory title, string memory description) public {
         //upload a file
         File memory newFile;
-        newFile.ipfsHash = ipfsHash;
-        newFile.title = title;
-        newFile.description = description;
-        newFile.owner = msg.sender;
+        newFile = File(ipfsHash, title, description);
         
         ownerToFiles[curr] = newFile;
+        filesUnderOwner[msg.sender] = curr;
+        ownerOfFiles[curr] = msg.sender;
+        fileCount[msg.sender]++;
+        
         curr++;
     }
     
     function getFileCount() public view returns (uint) {
         //get file count
-        return curr;
+        return fileCount[msg.sender];
     } 
     
-    function getFile() public view returns (File[] memory) {
-        // for(uint i=0;i<curr;i++){
-        //     if(ownerToFiles[i].owner == msg.sender){
-        //         return ownerToFiles[i];
-        //     }
-        // }
-        
-        // File memory emptyFile;
-        // return emptyFile;
-        
-        //return all files 
-        return ownerToFiles;
+    function getFile() public view returns (File memory) {
+        uint id = filesUnderOwner[msg.sender];
+        return ownerToFiles[id];
     }
-    
-    
     
 }
