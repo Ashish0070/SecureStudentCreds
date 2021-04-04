@@ -14,7 +14,7 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "a",
+						"name": "_student",
 						"type": "address"
 					}
 				],
@@ -25,35 +25,6 @@
 			},
 			{
 				"inputs": [
-					{
-						"internalType": "string",
-						"name": "a",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "b",
-						"type": "string"
-					}
-				],
-				"name": "compareStrings",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "a",
-						"type": "address"
-					},
 					{
 						"internalType": "string",
 						"name": "name",
@@ -71,10 +42,73 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "getSchools",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "a",
+						"name": "_student",
+						"type": "address"
+					}
+				],
+				"name": "getStudent",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "designation",
+								"type": "string"
+							}
+						],
+						"internalType": "struct User.user",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_school",
+						"type": "address"
+					}
+				],
+				"name": "getStudents",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_a",
 						"type": "address"
 					}
 				],
@@ -104,32 +138,148 @@
 			{
 				"inputs": [
 					{
-						"components": [
-							{
-								"internalType": "string",
-								"name": "name",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "designation",
-								"type": "string"
-							}
-						],
-						"internalType": "struct User.user",
-						"name": "u",
-						"type": "tuple"
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "designation",
+						"type": "string"
 					}
 				],
 				"name": "getUserAddress",
 				"outputs": [
 					{
-						"internalType": "address[]",
+						"internalType": "address",
 						"name": "",
-						"type": "address[]"
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_a",
+						"type": "address"
+					}
+				],
+				"name": "hasUser",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "schoolStudents",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "studentCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "studentToSchool",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_school",
+						"type": "address"
+					}
+				],
+				"name": "studentsCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "ipfsHash",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_student",
+						"type": "address"
+					}
+				],
+				"name": "uploadFileSchool",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -161,35 +311,35 @@
 	},
 	"sources": {
 		"contracts/FileContract.sol": {
-			"keccak256": "0x6b085658339f6bb76571e53d9658dac92af99057c335be9a84e9051123429342",
+			"keccak256": "0xb4b3b96119b2afca74fc7369aae5a384770ea2255712fcfe8ae25fd1cf3f2998",
 			"license": "CC-BY-SA-4.0",
 			"urls": [
-				"bzz-raw://72c9fb265086d388df24dfed7e8ae6da43a9a440d1273f938d41a34dbf5ccd84",
-				"dweb:/ipfs/QmQzVnxZfx9iJjj1AaQ2DxDRJQ2fvvFK7CmUoiYmGLaM6j"
+				"bzz-raw://c4025c37fcf847e5ca2eb875ebb13a21f4ab8f4d33b1265c2e76c1dc0d173d70",
+				"dweb:/ipfs/QmRp77A4zZkNiYesNzFQYw4CvDkrKWyq9WBq3yMNpj36tk"
 			]
 		},
 		"contracts/School.sol": {
-			"keccak256": "0x6d8ff424462726ab3184ddf685ee31a5b9c750e88129bceaba74b053a75de295",
+			"keccak256": "0x4313bbc4cfe72e9afdd74d9b84b9800d84d31d03bbb7fb98c4824b281551c1e9",
 			"license": "CC-BY-SA-4.0",
 			"urls": [
-				"bzz-raw://c1cd7fd3d02fe82ae3952d09283a1888f37911a087053555195e3bbffb80085f",
-				"dweb:/ipfs/QmQ6djq45HXkxJmyzHW4x3xDxW4fAQTcqtUqZ6AhTSVHHL"
+				"bzz-raw://1c0a23db22780d8edb8f9f0bb12144295b78be9a3b103654e15af7346ff5a1b4",
+				"dweb:/ipfs/QmTzznfvkuYsYRU4iywCUMkyo716vYk2BX4zekqgXNpMf3"
 			]
 		},
 		"contracts/Student.sol": {
-			"keccak256": "0x09184507c56fcd78394797828e5fc72c5819fae8b17b95db8db603142886cc89",
+			"keccak256": "0xb0d0cdc39e55d24767489a13651f4f59c979ee6cf520809174108972b84d8850",
 			"license": "CC-BY-SA-4.0",
 			"urls": [
-				"bzz-raw://6831d833121f60c7af994cf9c63e76dc9524f941a7bf54f784fa73b848448c76",
-				"dweb:/ipfs/Qmcbrtz5F3DyS6ytRQ7VTynaqZfu7N78Hg7unwndpTxUbU"
+				"bzz-raw://21187c5cefd878a7d08fc5349096746c8d610b75bb56ec4f2331b943ec086f62",
+				"dweb:/ipfs/QmaZigcrBExTo7BbfJ6F4Si7zFxiEooBmzSGVVkwb2MhgD"
 			]
 		},
 		"contracts/User.sol": {
-			"keccak256": "0x69daa3d051eb7bd30457262bfe6ea280e3db9890eac0ed003d354fd98b74b5d6",
+			"keccak256": "0x52b54a2f04d7faf43bd6aa473f06e1634ea95d371b155525b60ad987f1390ed0",
 			"license": "CC-BY-SA-4.0",
 			"urls": [
-				"bzz-raw://89e9aeb27b6faab142844bf113f909c6a2cc403dff3f28c097e54e19117d3505",
-				"dweb:/ipfs/QmX2u8WhZjeDtmSzEjPwjCeyRgeRMXpbfzgpzLhpaY9tdC"
+				"bzz-raw://8a5e6eb857bf6a482aa61b52f24cbc292ba223c3bdc4af87616197b4c5c22ba4",
+				"dweb:/ipfs/QmeSbxAWqdCFtrukvDTYCkPgtF6wLwkrwJyvpbV5qURZFv"
 			]
 		}
 	},

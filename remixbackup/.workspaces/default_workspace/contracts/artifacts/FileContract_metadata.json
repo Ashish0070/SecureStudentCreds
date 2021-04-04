@@ -6,15 +6,21 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
 				"name": "getFile",
 				"outputs": [
 					{
 						"components": [
 							{
-								"internalType": "bytes",
+								"internalType": "string",
 								"name": "ipfsHash",
-								"type": "bytes"
+								"type": "string"
 							},
 							{
 								"internalType": "string",
@@ -25,11 +31,6 @@
 								"internalType": "string",
 								"name": "description",
 								"type": "string"
-							},
-							{
-								"internalType": "address",
-								"name": "owner",
-								"type": "address"
 							}
 						],
 						"internalType": "struct FileContract.File[]",
@@ -41,7 +42,13 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
 				"name": "getFileCount",
 				"outputs": [
 					{
@@ -56,9 +63,9 @@
 			{
 				"inputs": [
 					{
-						"internalType": "bytes",
+						"internalType": "string",
 						"name": "ipfsHash",
-						"type": "bytes"
+						"type": "string"
 					},
 					{
 						"internalType": "string",
@@ -69,6 +76,11 @@
 						"internalType": "string",
 						"name": "description",
 						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
 					}
 				],
 				"name": "uploadFile",
@@ -105,11 +117,11 @@
 	},
 	"sources": {
 		"contracts/FileContract.sol": {
-			"keccak256": "0x6b085658339f6bb76571e53d9658dac92af99057c335be9a84e9051123429342",
+			"keccak256": "0xb4b3b96119b2afca74fc7369aae5a384770ea2255712fcfe8ae25fd1cf3f2998",
 			"license": "CC-BY-SA-4.0",
 			"urls": [
-				"bzz-raw://72c9fb265086d388df24dfed7e8ae6da43a9a440d1273f938d41a34dbf5ccd84",
-				"dweb:/ipfs/QmQzVnxZfx9iJjj1AaQ2DxDRJQ2fvvFK7CmUoiYmGLaM6j"
+				"bzz-raw://c4025c37fcf847e5ca2eb875ebb13a21f4ab8f4d33b1265c2e76c1dc0d173d70",
+				"dweb:/ipfs/QmRp77A4zZkNiYesNzFQYw4CvDkrKWyq9WBq3yMNpj36tk"
 			]
 		}
 	},

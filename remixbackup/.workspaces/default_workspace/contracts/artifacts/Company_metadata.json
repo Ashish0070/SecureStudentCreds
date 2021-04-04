@@ -30,42 +30,31 @@
 			},
 			{
 				"inputs": [],
-				"name": "getFile",
+				"name": "getSchoolAddresses",
 				"outputs": [
 					{
-						"components": [
-							{
-								"internalType": "string",
-								"name": "ipfsHash",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "title",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "description",
-								"type": "string"
-							}
-						],
-						"internalType": "struct FileContract.File[]",
+						"internalType": "address[]",
 						"name": "",
-						"type": "tuple[]"
+						"type": "address[]"
 					}
 				],
 				"stateMutability": "view",
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "getFileCount",
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_school",
+						"type": "address"
+					}
+				],
+				"name": "getSchoolStudentsAddresses",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "address[]",
 						"name": "",
-						"type": "uint256"
+						"type": "address[]"
 					}
 				],
 				"stateMutability": "view",
@@ -159,7 +148,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Student.sol": "Student"
+			"contracts/Company.sol": "Company"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -173,12 +162,28 @@
 		"remappings": []
 	},
 	"sources": {
+		"contracts/Company.sol": {
+			"keccak256": "0x5b9f25dae5dd7a836d260086d57453a2244d6adabce2a10af9b171339ef96361",
+			"license": "CC-BY-SA-4.0",
+			"urls": [
+				"bzz-raw://3c9d8dba509353fbd4b794c42bcf09f79b9a0844ad6e1d8d50426aeeef47faeb",
+				"dweb:/ipfs/QmfBaNQiNjQYq4AHkvPYTv5sWjVgN9iDLhHahvAXtnvpu2"
+			]
+		},
 		"contracts/FileContract.sol": {
 			"keccak256": "0xb4b3b96119b2afca74fc7369aae5a384770ea2255712fcfe8ae25fd1cf3f2998",
 			"license": "CC-BY-SA-4.0",
 			"urls": [
 				"bzz-raw://c4025c37fcf847e5ca2eb875ebb13a21f4ab8f4d33b1265c2e76c1dc0d173d70",
 				"dweb:/ipfs/QmRp77A4zZkNiYesNzFQYw4CvDkrKWyq9WBq3yMNpj36tk"
+			]
+		},
+		"contracts/School.sol": {
+			"keccak256": "0x4313bbc4cfe72e9afdd74d9b84b9800d84d31d03bbb7fb98c4824b281551c1e9",
+			"license": "CC-BY-SA-4.0",
+			"urls": [
+				"bzz-raw://1c0a23db22780d8edb8f9f0bb12144295b78be9a3b103654e15af7346ff5a1b4",
+				"dweb:/ipfs/QmTzznfvkuYsYRU4iywCUMkyo716vYk2BX4zekqgXNpMf3"
 			]
 		},
 		"contracts/Student.sol": {

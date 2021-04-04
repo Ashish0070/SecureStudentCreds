@@ -4,7 +4,115 @@
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_student",
+						"type": "address"
+					}
+				],
+				"name": "getFile",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "ipfsHash",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "title",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "description",
+								"type": "string"
+							}
+						],
+						"internalType": "struct FileContract.File[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_student",
+						"type": "address"
+					}
+				],
+				"name": "getSharedFilesCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "toBeShared",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "address",
+						"name": "_company",
+						"type": "address"
+					}
+				],
+				"name": "shareFileIndex",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "sharedFiles",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -32,28 +140,60 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/FileContract.sol": {
-			"keccak256": "0x6b085658339f6bb76571e53d9658dac92af99057c335be9a84e9051123429342",
+		"contracts/Company.sol": {
+			"keccak256": "0x5b9f25dae5dd7a836d260086d57453a2244d6adabce2a10af9b171339ef96361",
 			"license": "CC-BY-SA-4.0",
 			"urls": [
-				"bzz-raw://72c9fb265086d388df24dfed7e8ae6da43a9a440d1273f938d41a34dbf5ccd84",
-				"dweb:/ipfs/QmQzVnxZfx9iJjj1AaQ2DxDRJQ2fvvFK7CmUoiYmGLaM6j"
+				"bzz-raw://3c9d8dba509353fbd4b794c42bcf09f79b9a0844ad6e1d8d50426aeeef47faeb",
+				"dweb:/ipfs/QmfBaNQiNjQYq4AHkvPYTv5sWjVgN9iDLhHahvAXtnvpu2"
+			]
+		},
+		"contracts/FileContract.sol": {
+			"keccak256": "0xb4b3b96119b2afca74fc7369aae5a384770ea2255712fcfe8ae25fd1cf3f2998",
+			"license": "CC-BY-SA-4.0",
+			"urls": [
+				"bzz-raw://c4025c37fcf847e5ca2eb875ebb13a21f4ab8f4d33b1265c2e76c1dc0d173d70",
+				"dweb:/ipfs/QmRp77A4zZkNiYesNzFQYw4CvDkrKWyq9WBq3yMNpj36tk"
+			]
+		},
+		"contracts/Request.sol": {
+			"keccak256": "0x77b7f9fed866dbd56404db04a200c523416d3d09e7a18baa5b0305b7408a285e",
+			"license": "CC-BY-SA-4.0",
+			"urls": [
+				"bzz-raw://24bce57ba5148ea3ad12f02f7310f01e780cf8ac6ab9a5d761cf41e51e988d5f",
+				"dweb:/ipfs/QmadJRZW8f2LDU4fpqoASJhSaft7UqQmfg4MXEKDaxvhQv"
+			]
+		},
+		"contracts/School.sol": {
+			"keccak256": "0x4313bbc4cfe72e9afdd74d9b84b9800d84d31d03bbb7fb98c4824b281551c1e9",
+			"license": "CC-BY-SA-4.0",
+			"urls": [
+				"bzz-raw://1c0a23db22780d8edb8f9f0bb12144295b78be9a3b103654e15af7346ff5a1b4",
+				"dweb:/ipfs/QmTzznfvkuYsYRU4iywCUMkyo716vYk2BX4zekqgXNpMf3"
 			]
 		},
 		"contracts/ShareFiles.sol": {
-			"keccak256": "0x63e3669744a1838418f9c11f48920155b1d11d78109da6a58dda5c4fe7f9eec9",
+			"keccak256": "0xeb3eca8b74839f44410768eb511d7a264e98120eb22c05781be76a2ae2a38668",
 			"license": "CC-BY-SA-4.0",
 			"urls": [
-				"bzz-raw://c85f70ce1c4cd9fb810fb6bf35eff3fd072c1d918c0b500dec5a168d4b7dbc98",
-				"dweb:/ipfs/QmRexh1n5YKdsUSJb7Q7jAuAyB4SRiynGqaf8Gn3UZQ8Mq"
+				"bzz-raw://66b56db1e78ebc10eba8b42df5d553d97fd555a8e9e00234b28e024d176ed888",
+				"dweb:/ipfs/QmTyTDXo6cG9L5sg99tXhDGxbyPLNz4CwEimYSbtFpXF22"
 			]
 		},
 		"contracts/Student.sol": {
-			"keccak256": "0x09184507c56fcd78394797828e5fc72c5819fae8b17b95db8db603142886cc89",
+			"keccak256": "0xb0d0cdc39e55d24767489a13651f4f59c979ee6cf520809174108972b84d8850",
 			"license": "CC-BY-SA-4.0",
 			"urls": [
-				"bzz-raw://6831d833121f60c7af994cf9c63e76dc9524f941a7bf54f784fa73b848448c76",
-				"dweb:/ipfs/Qmcbrtz5F3DyS6ytRQ7VTynaqZfu7N78Hg7unwndpTxUbU"
+				"bzz-raw://21187c5cefd878a7d08fc5349096746c8d610b75bb56ec4f2331b943ec086f62",
+				"dweb:/ipfs/QmaZigcrBExTo7BbfJ6F4Si7zFxiEooBmzSGVVkwb2MhgD"
+			]
+		},
+		"contracts/User.sol": {
+			"keccak256": "0x52b54a2f04d7faf43bd6aa473f06e1634ea95d371b155525b60ad987f1390ed0",
+			"license": "CC-BY-SA-4.0",
+			"urls": [
+				"bzz-raw://8a5e6eb857bf6a482aa61b52f24cbc292ba223c3bdc4af87616197b4c5c22ba4",
+				"dweb:/ipfs/QmeSbxAWqdCFtrukvDTYCkPgtF6wLwkrwJyvpbV5qURZFv"
 			]
 		}
 	},

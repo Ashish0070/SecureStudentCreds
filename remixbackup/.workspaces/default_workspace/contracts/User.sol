@@ -10,50 +10,52 @@ contract User {
         string designation;
     }
     
-    user[] public addressToUser; //for storing all user structs
-    mapping(address => bool) public userExists;  //if for an address user exists;
-    mapping(uint => address) public addressOfUser; //id of user to address
+    user[] users; //for storing all user structs
+    mapping(address => bool) userExists;  //if for an address user exists;
+    mapping(uint => address) addressOfUser; //id of user to address
     mapping(address => uint) userOfAddress; //address to id of user
-    uint totalUsers; //total users
-    
-    //comparing structs
-    function equals(user memory _first,user memory _second) internal pure returns (bool) {
-        // Just compare the output of hashing all fields packed
-        return(keccak256(abi.encodePacked(_first.name, _first.designation)) == keccak256(abi.encodePacked(_second.name, _second.designation)));
-    }
+    uint totalUsers=0; //total users
+    uint totalSchools=0;
 
+    function equalsString(string memory _first,string memory _second) internal pure returns (bool) {
+        // Just compare the output of hashing all fields packed
+        return(keccak256(abi.encodePacked(_first)) == keccak256(abi.encodePacked(_second)));
+    }
     
-    function hasUser() public view returns (bool) { 
-        return userExists[msg.sender];
+    function hasUser(address _a) public view returns (bool) { 
+        return userExists[_a];
     }
     
     
-    function createUser(string memory name, string memory designation) public {
+    function createUser(string memory name, string memory designation) external {
         
         //check if user from this address already exists
-        require(userExists[msg.sender]);
+        require(!hasUser(msg.sender));
         
         //create a new user
         user memory u = user(name, designation);
         
+        if(equalsString(designation, "School")){
+            totalSchools++;
+        }
         
         uint id = totalUsers;
+        
         addressOfUser[id] = msg.sender;
+        userOfAddress[msg.sender] = id;
         
         userExists[msg.sender] = true;
         
-        addressToUser[id] = u;
-        
-        userOfAddress[msg.sender] = id;
+        users.push(u);
         
         totalUsers++;
     }
     
     
-    function getUserAddress(user memory u) public view returns (address) {
+    function getUserAddress(string memory name, string memory designation) public view returns (address) {
         uint id = 0;
         for(;id<totalUsers;id++){
-            if(equals(u, addressToUser[id])){
+            if(equalsString(name, users[id].name) && equalsString(designation, users[id].designation)){
                 break;
             }
         }
@@ -61,9 +63,8 @@ contract User {
         return addressOfUser[id];
     }
     
-    function getUser() public view returns (user memory) {
-        return addressToUser[userOfAddress[msg.sender]];
+    function getUser(address _a) public view returns (user memory) {
+        return users[userOfAddress[_a]];
     }
-    
     
 }
