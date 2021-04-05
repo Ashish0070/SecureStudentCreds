@@ -1,47 +1,8 @@
-var schoolABI = [
+var companyABI = [
 	{
 		"inputs": [],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
-	},
-	{
-		"inputs": [],
-		"name": "FileContractAddress",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "StudentContractAddress",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_student",
-				"type": "address"
-			}
-		],
-		"name": "addStudent",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
 	},
 	{
 		"inputs": [
@@ -119,7 +80,20 @@ var schoolABI = [
 	},
 	{
 		"inputs": [],
-		"name": "getSchools",
+		"name": "fca",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getSchoolAddresses",
 		"outputs": [
 			{
 				"components": [
@@ -151,42 +125,11 @@ var schoolABI = [
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "_student",
-				"type": "address"
-			}
-		],
-		"name": "getStudent",
-		"outputs": [
-			{
-				"components": [
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "designation",
-						"type": "string"
-					}
-				],
-				"internalType": "struct TestUser.user",
-				"name": "",
-				"type": "tuple"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
 				"name": "_school",
 				"type": "address"
 			}
 		],
-		"name": "getStudents",
+		"name": "getSchoolStudentsAddresses",
 		"outputs": [
 			{
 				"internalType": "address[]",
@@ -256,30 +199,6 @@ var schoolABI = [
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "_student",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "_school",
-				"type": "address"
-			}
-		],
-		"name": "hasStudent",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
 				"name": "_a",
 				"type": "address"
 			}
@@ -300,85 +219,9 @@ var schoolABI = [
 		"name": "s",
 		"outputs": [
 			{
-				"internalType": "contract Student",
+				"internalType": "contract School",
 				"name": "",
 				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "schoolStudents",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "studentCount",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "studentToSchool",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_school",
-				"type": "address"
-			}
-		],
-		"name": "studentsCount",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -386,12 +229,12 @@ var schoolABI = [
 	},
 	{
 		"inputs": [],
-		"name": "totalStudents",
+		"name": "sa",
 		"outputs": [
 			{
-				"internalType": "uint256",
+				"internalType": "address",
 				"name": "",
-				"type": "uint256"
+				"type": "address"
 			}
 		],
 		"stateMutability": "view",
@@ -408,34 +251,6 @@ var schoolABI = [
 			}
 		],
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "ipfsHash",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "title",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "description",
-				"type": "string"
-			},
-			{
-				"internalType": "address",
-				"name": "_student",
-				"type": "address"
-			}
-		],
-		"name": "uploadFileSchool",
-		"outputs": [],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
