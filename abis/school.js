@@ -5,6 +5,32 @@ var schoolABI = [
 		"type": "constructor"
 	},
 	{
+		"inputs": [],
+		"name": "FileContractAddress",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "StudentContractAddress",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -15,6 +41,25 @@ var schoolABI = [
 		"name": "addStudent",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "addressOfUser",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -33,6 +78,43 @@ var schoolABI = [
 		"name": "createUser",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_first",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_second",
+				"type": "string"
+			}
+		],
+		"name": "equalsString",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "fc",
+		"outputs": [
+			{
+				"internalType": "contract FileContract",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -71,7 +153,7 @@ var schoolABI = [
 						"type": "string"
 					}
 				],
-				"internalType": "struct User.user",
+				"internalType": "struct TestUser.user",
 				"name": "",
 				"type": "tuple"
 			}
@@ -121,7 +203,7 @@ var schoolABI = [
 						"type": "string"
 					}
 				],
-				"internalType": "struct User.user",
+				"internalType": "struct TestUser.user",
 				"name": "",
 				"type": "tuple"
 			}
@@ -157,6 +239,30 @@ var schoolABI = [
 		"inputs": [
 			{
 				"internalType": "address",
+				"name": "_student",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_school",
+				"type": "address"
+			}
+		],
+		"name": "hasStudent",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
 				"name": "_a",
 				"type": "address"
 			}
@@ -167,6 +273,19 @@ var schoolABI = [
 				"internalType": "bool",
 				"name": "",
 				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "s",
+		"outputs": [
+			{
+				"internalType": "contract Student",
+				"name": "",
+				"type": "address"
 			}
 		],
 		"stateMutability": "view",
@@ -213,9 +332,9 @@ var schoolABI = [
 	{
 		"inputs": [
 			{
-				"internalType": "address",
+				"internalType": "uint256",
 				"name": "",
-				"type": "address"
+				"type": "uint256"
 			}
 		],
 		"name": "studentToSchool",
@@ -238,6 +357,32 @@ var schoolABI = [
 			}
 		],
 		"name": "studentsCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "totalStudents",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "totalUsers",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -274,6 +419,49 @@ var schoolABI = [
 		"name": "uploadFileSchool",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "userOfAddress",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "users",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "designation",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	}
 ]
