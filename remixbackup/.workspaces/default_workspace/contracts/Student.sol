@@ -2,13 +2,13 @@
 
 pragma solidity ^0.6.0;
 pragma experimental ABIEncoderV2;
-import './User.sol';
 import './FileContract.sol';
+import  './TestUser.sol';
 
-contract Student is User{
+contract Student is TestUser{
     
-    FileContract fc;  //all files owned by a student
-    address FileContractAddress = 0xb9d76A0C78338f6622a2364afeC9e60CCB8e7B35;  //set it later(deployed one)
+    FileContract public fc;  //all files owned by a student
+    address public FileContractAddress = 0x9841B68a56c7E70EAa8675AAE8629600dfBEBC96;  //set it later(deployed one)
     
     constructor() public {
         //create an instance of File Contract using the deployed File Contract's address

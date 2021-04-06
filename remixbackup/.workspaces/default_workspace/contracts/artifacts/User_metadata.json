@@ -8,6 +8,25 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "addressOfUser",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "string",
 						"name": "name",
 						"type": "string"
@@ -96,6 +115,68 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "userExists",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "userOfAddress",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "users",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "designation",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -126,11 +207,11 @@
 	},
 	"sources": {
 		"contracts/User.sol": {
-			"keccak256": "0x52b54a2f04d7faf43bd6aa473f06e1634ea95d371b155525b60ad987f1390ed0",
+			"keccak256": "0xb370526097e5d2962225f318928239f8668527a1a2334e157a04e6d7e19d24bb",
 			"license": "CC-BY-SA-4.0",
 			"urls": [
-				"bzz-raw://8a5e6eb857bf6a482aa61b52f24cbc292ba223c3bdc4af87616197b4c5c22ba4",
-				"dweb:/ipfs/QmeSbxAWqdCFtrukvDTYCkPgtF6wLwkrwJyvpbV5qURZFv"
+				"bzz-raw://adb32feaeeeee718c3ba7aab260a67229ad801370e341516940e2181ee192a62",
+				"dweb:/ipfs/QmRfgM4jLxujzRrqVykx6QiMS3Tv4jERgUx2YboQM3MYvz"
 			]
 		}
 	},

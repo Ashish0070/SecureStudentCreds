@@ -11,6 +11,38 @@
 				"type": "constructor"
 			},
 			{
+				"inputs": [],
+				"name": "FileContractAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "addressOfUser",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "string",
@@ -26,6 +58,43 @@
 				"name": "createUser",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_first",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_second",
+						"type": "string"
+					}
+				],
+				"name": "equalsString",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "fc",
+				"outputs": [
+					{
+						"internalType": "contract FileContract",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -94,7 +163,7 @@
 								"type": "string"
 							}
 						],
-						"internalType": "struct User.user",
+						"internalType": "struct TestUser.user",
 						"name": "",
 						"type": "tuple"
 					}
@@ -144,6 +213,62 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalUsers",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "userOfAddress",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "users",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "designation",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -174,27 +299,27 @@
 	},
 	"sources": {
 		"contracts/FileContract.sol": {
-			"keccak256": "0xb4b3b96119b2afca74fc7369aae5a384770ea2255712fcfe8ae25fd1cf3f2998",
+			"keccak256": "0xbc30b18a2269b1ad64993bd9609bc266cd5e9be7d517c29d7176bba3d7ec78f4",
 			"license": "CC-BY-SA-4.0",
 			"urls": [
-				"bzz-raw://c4025c37fcf847e5ca2eb875ebb13a21f4ab8f4d33b1265c2e76c1dc0d173d70",
-				"dweb:/ipfs/QmRp77A4zZkNiYesNzFQYw4CvDkrKWyq9WBq3yMNpj36tk"
+				"bzz-raw://3c9fb6da9263c7ccd6e81803445b09ddecf7ac8e31f0cc7e20b9416d228bc15d",
+				"dweb:/ipfs/QmdDpfjemHESdZcPzdqdbQFPNFHJagngB5KjjyEXVJsvxn"
 			]
 		},
 		"contracts/Student.sol": {
-			"keccak256": "0xb0d0cdc39e55d24767489a13651f4f59c979ee6cf520809174108972b84d8850",
+			"keccak256": "0xad80557379749e2c420890310c3d57d1f5f38361c4178ef584b9a829da7c4740",
 			"license": "CC-BY-SA-4.0",
 			"urls": [
-				"bzz-raw://21187c5cefd878a7d08fc5349096746c8d610b75bb56ec4f2331b943ec086f62",
-				"dweb:/ipfs/QmaZigcrBExTo7BbfJ6F4Si7zFxiEooBmzSGVVkwb2MhgD"
+				"bzz-raw://29e897084df2a5a78a05693c76ab7125d405482dc5dbc236df826b2b72ba8833",
+				"dweb:/ipfs/QmQpjZWre3C9dTtEAELCEwm2E7nrxUWNQpm3hNvuKer9df"
 			]
 		},
-		"contracts/User.sol": {
-			"keccak256": "0x52b54a2f04d7faf43bd6aa473f06e1634ea95d371b155525b60ad987f1390ed0",
+		"contracts/TestUser.sol": {
+			"keccak256": "0x2229ecc83d24b7695dba0b545ffdac263ce5046f6e129de3bea1cb807d7d6ee9",
 			"license": "CC-BY-SA-4.0",
 			"urls": [
-				"bzz-raw://8a5e6eb857bf6a482aa61b52f24cbc292ba223c3bdc4af87616197b4c5c22ba4",
-				"dweb:/ipfs/QmeSbxAWqdCFtrukvDTYCkPgtF6wLwkrwJyvpbV5qURZFv"
+				"bzz-raw://54adb7f0623165d693f7b928f5401e61790fad0b226d0d2bf88449b561f0a555",
+				"dweb:/ipfs/QmQinaUq4rL5idvJSuXNJik6prrNEX9JVUmjGbr85ujdpP"
 			]
 		}
 	},

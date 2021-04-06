@@ -6,97 +6,116 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"name": "curr",
-				"outputs": [
+				"inputs": [
 					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
+				"name": "addressOfUser",
+				"outputs": [
 					{
 						"internalType": "address",
 						"name": "",
 						"type": "address"
 					}
 				],
-				"name": "fileCount",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
 				"stateMutability": "view",
 				"type": "function"
 			},
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "designation",
+						"type": "string"
 					}
 				],
-				"name": "files",
+				"name": "createUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_first",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_second",
+						"type": "string"
+					}
+				],
+				"name": "equalsString",
 				"outputs": [
 					{
-						"internalType": "string",
-						"name": "ipfsHash",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "title",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "description",
-						"type": "string"
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
 					}
 				],
-				"stateMutability": "view",
+				"stateMutability": "pure",
 				"type": "function"
 			},
 			{
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_owner",
+						"name": "_a",
 						"type": "address"
 					}
 				],
-				"name": "getFile",
+				"name": "getUser",
 				"outputs": [
 					{
 						"components": [
 							{
 								"internalType": "string",
-								"name": "ipfsHash",
+								"name": "name",
 								"type": "string"
 							},
 							{
 								"internalType": "string",
-								"name": "title",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "description",
+								"name": "designation",
 								"type": "string"
 							}
 						],
-						"internalType": "struct FileContract.File[]",
+						"internalType": "struct TestUser.user",
 						"name": "",
-						"type": "tuple[]"
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "designation",
+						"type": "string"
+					}
+				],
+				"name": "getUserAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -106,11 +125,43 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_owner",
+						"name": "_a",
 						"type": "address"
 					}
 				],
-				"name": "getFileCount",
+				"name": "hasUser",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalUsers",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "userOfAddress",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -129,43 +180,20 @@
 						"type": "uint256"
 					}
 				],
-				"name": "ownerOfFiles",
+				"name": "users",
 				"outputs": [
 					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "designation",
+						"type": "string"
 					}
 				],
 				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "ipfsHash",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "title",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "description",
-						"type": "string"
-					},
-					{
-						"internalType": "address",
-						"name": "_owner",
-						"type": "address"
-					}
-				],
-				"name": "uploadFile",
-				"outputs": [],
-				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -182,7 +210,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/FileContract.sol": "FileContract"
+			"contracts/TestUser.sol": "TestUser"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -196,12 +224,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/FileContract.sol": {
-			"keccak256": "0xbc30b18a2269b1ad64993bd9609bc266cd5e9be7d517c29d7176bba3d7ec78f4",
+		"contracts/TestUser.sol": {
+			"keccak256": "0x2229ecc83d24b7695dba0b545ffdac263ce5046f6e129de3bea1cb807d7d6ee9",
 			"license": "CC-BY-SA-4.0",
 			"urls": [
-				"bzz-raw://3c9fb6da9263c7ccd6e81803445b09ddecf7ac8e31f0cc7e20b9416d228bc15d",
-				"dweb:/ipfs/QmdDpfjemHESdZcPzdqdbQFPNFHJagngB5KjjyEXVJsvxn"
+				"bzz-raw://54adb7f0623165d693f7b928f5401e61790fad0b226d0d2bf88449b561f0a555",
+				"dweb:/ipfs/QmQinaUq4rL5idvJSuXNJik6prrNEX9JVUmjGbr85ujdpP"
 			]
 		}
 	},

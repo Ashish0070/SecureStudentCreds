@@ -10,10 +10,10 @@ contract User {
         string designation;
     }
     
-    user[] users; //for storing all user structs
-    mapping(address => bool) userExists;  //if for an address user exists;
-    mapping(uint => address) addressOfUser; //id of user to address
-    mapping(address => uint) userOfAddress; //address to id of user
+    user[] public users; //for storing all user structs
+    mapping(address => bool) public userExists;  //if for an address user exists;
+    mapping(uint => address) public addressOfUser; //id of user to address
+    mapping(address => uint) public userOfAddress; //address to id of user
     uint totalUsers=0; //total users
     uint totalSchools=0;
 

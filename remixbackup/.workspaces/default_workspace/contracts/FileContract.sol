@@ -13,30 +13,29 @@ contract FileContract {
         string description;
     }
     
-    File[] files;
-    mapping(uint => address) ownerOfFiles;
-    mapping(address => uint) fileCount;
-    uint curr;
+    File[] public files;
+    address[] public ownerOfFiles;
+    mapping(address => uint) public fileCount;
+    uint public curr;
     
-    function uploadFile(string memory ipfsHash, string memory title, string memory description, address _owner) external {
-        File memory newFile;
-        newFile = File(ipfsHash, title, description);
-        
-        files.push(newFile);
-        ownerOfFiles[curr] = _owner;
+    
+    function uploadFile(string memory ipfsHash, string memory title, string memory description, address _owner) public {
+        files.push(File(ipfsHash, title, description));
+        ownerOfFiles.push(_owner);
         fileCount[_owner]++;
-        
         curr++;
     }
     
-    function getFileCount(address _owner) external view returns (uint) {
+    
+    function getFileCount(address _owner) public view returns (uint) {
         return fileCount[_owner];
     } 
     
-    function getFile(address _owner) external view returns (File[] memory) {
+    
+    function getFile(address _owner) public view returns (File[] memory) {
         File[] memory result = new File[](fileCount[_owner]);
         uint id=0;
-        for(uint i=0;i<files.length;i++){
+        for(uint i=0;i<curr;i++){
             if(ownerOfFiles[i]==_owner){
                 result[id] = files[i];
                 id++;

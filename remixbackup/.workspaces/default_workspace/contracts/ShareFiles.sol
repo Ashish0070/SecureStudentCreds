@@ -15,9 +15,9 @@ contract ShareFiles {
     Company c;
     
     //set later
-    address sa = 0xc0d0e6311f5A3FCfB23da3dE9f6D2768eC3F546D;
-    address fa = 0xb9d76A0C78338f6622a2364afeC9e60CCB8e7B35;
-    address ca = 0x369AD0d6d0a49a5662E60381aA40D950AE9bF165;
+    address sa = 0x0bFCfA4092a19E9B78Eb32Eb4011B68b51Fbdb8e;
+    address fa = 0x9841B68a56c7E70EAa8675AAE8629600dfBEBC96;
+    address ca = 0xEA1E64339565f747c4cBFdD26885FF9bfA06BA54;
 
     mapping(address => mapping(address => uint[])) public sharedFiles;
     mapping(address => uint) sharedCount;

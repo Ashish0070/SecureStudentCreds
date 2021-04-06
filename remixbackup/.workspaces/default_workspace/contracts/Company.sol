@@ -5,13 +5,13 @@ pragma experimental ABIEncoderV2;
 import './FileContract.sol';
 import './School.sol';
 
-contract Company is User{
-    FileContract fc;
-    School s;
+contract Company is TestUser{
+    FileContract public fc;
+    School public s;
     
     //set later
-    address fca = 0xb9d76A0C78338f6622a2364afeC9e60CCB8e7B35;
-    address sa = 0x131872D29746Ec98748b5A064FA3b53c04932B95;
+    address public fca = 0x9841B68a56c7E70EAa8675AAE8629600dfBEBC96;
+    address public sa = 0xaa8bF279540b0341d310bCD91f0cDe0C9A9A4694;
     
     constructor() public {
         fc = FileContract(fca);

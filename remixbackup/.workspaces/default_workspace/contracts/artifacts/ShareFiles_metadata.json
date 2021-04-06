@@ -141,19 +141,19 @@
 	},
 	"sources": {
 		"contracts/Company.sol": {
-			"keccak256": "0x5b9f25dae5dd7a836d260086d57453a2244d6adabce2a10af9b171339ef96361",
+			"keccak256": "0x903d49fa2dd77130ba884ea3239fcfd3fb83089d46e0f54a25aaa2f5636538cc",
 			"license": "CC-BY-SA-4.0",
 			"urls": [
-				"bzz-raw://3c9d8dba509353fbd4b794c42bcf09f79b9a0844ad6e1d8d50426aeeef47faeb",
-				"dweb:/ipfs/QmfBaNQiNjQYq4AHkvPYTv5sWjVgN9iDLhHahvAXtnvpu2"
+				"bzz-raw://8bae2c6e048d121b1a4a07443cdfd690a4740046c58fdcd780f9cce0155fc156",
+				"dweb:/ipfs/QmQvMnQENmFGevgNYbxBfH4gJBmvkuyFeRYquAR1FQ6Jyu"
 			]
 		},
 		"contracts/FileContract.sol": {
-			"keccak256": "0xb4b3b96119b2afca74fc7369aae5a384770ea2255712fcfe8ae25fd1cf3f2998",
+			"keccak256": "0xbc30b18a2269b1ad64993bd9609bc266cd5e9be7d517c29d7176bba3d7ec78f4",
 			"license": "CC-BY-SA-4.0",
 			"urls": [
-				"bzz-raw://c4025c37fcf847e5ca2eb875ebb13a21f4ab8f4d33b1265c2e76c1dc0d173d70",
-				"dweb:/ipfs/QmRp77A4zZkNiYesNzFQYw4CvDkrKWyq9WBq3yMNpj36tk"
+				"bzz-raw://3c9fb6da9263c7ccd6e81803445b09ddecf7ac8e31f0cc7e20b9416d228bc15d",
+				"dweb:/ipfs/QmdDpfjemHESdZcPzdqdbQFPNFHJagngB5KjjyEXVJsvxn"
 			]
 		},
 		"contracts/Request.sol": {
@@ -165,35 +165,35 @@
 			]
 		},
 		"contracts/School.sol": {
-			"keccak256": "0x4313bbc4cfe72e9afdd74d9b84b9800d84d31d03bbb7fb98c4824b281551c1e9",
+			"keccak256": "0xdfa1bcdbeef8180971928f918b34e7da43800ff896dc2467ae3344164405b4c7",
 			"license": "CC-BY-SA-4.0",
 			"urls": [
-				"bzz-raw://1c0a23db22780d8edb8f9f0bb12144295b78be9a3b103654e15af7346ff5a1b4",
-				"dweb:/ipfs/QmTzznfvkuYsYRU4iywCUMkyo716vYk2BX4zekqgXNpMf3"
+				"bzz-raw://c237935fe7cdd775c33d20c013f8e16063094d0bd776b25b6b73e855cebc560c",
+				"dweb:/ipfs/QmXx5Dnijxu4XEpWNy5kRDSPCrz8uRZZkJK4fvnVhdCpTE"
 			]
 		},
 		"contracts/ShareFiles.sol": {
-			"keccak256": "0xeb3eca8b74839f44410768eb511d7a264e98120eb22c05781be76a2ae2a38668",
+			"keccak256": "0x3ece928661a65fc6464a1cfc1dc864cc43d4707af4bdd108af566c1f32236db6",
 			"license": "CC-BY-SA-4.0",
 			"urls": [
-				"bzz-raw://66b56db1e78ebc10eba8b42df5d553d97fd555a8e9e00234b28e024d176ed888",
-				"dweb:/ipfs/QmTyTDXo6cG9L5sg99tXhDGxbyPLNz4CwEimYSbtFpXF22"
+				"bzz-raw://c9c2b71ee406ff8a15f6e652a9dbf15f7e6da39de2365a554bee7d701a3e8434",
+				"dweb:/ipfs/QmTjiHqNSm6QfDrMWRHvC3PkcWJ699gMEE4aB2pbaoLBEe"
 			]
 		},
 		"contracts/Student.sol": {
-			"keccak256": "0xb0d0cdc39e55d24767489a13651f4f59c979ee6cf520809174108972b84d8850",
+			"keccak256": "0xad80557379749e2c420890310c3d57d1f5f38361c4178ef584b9a829da7c4740",
 			"license": "CC-BY-SA-4.0",
 			"urls": [
-				"bzz-raw://21187c5cefd878a7d08fc5349096746c8d610b75bb56ec4f2331b943ec086f62",
-				"dweb:/ipfs/QmaZigcrBExTo7BbfJ6F4Si7zFxiEooBmzSGVVkwb2MhgD"
+				"bzz-raw://29e897084df2a5a78a05693c76ab7125d405482dc5dbc236df826b2b72ba8833",
+				"dweb:/ipfs/QmQpjZWre3C9dTtEAELCEwm2E7nrxUWNQpm3hNvuKer9df"
 			]
 		},
-		"contracts/User.sol": {
-			"keccak256": "0x52b54a2f04d7faf43bd6aa473f06e1634ea95d371b155525b60ad987f1390ed0",
+		"contracts/TestUser.sol": {
+			"keccak256": "0x2229ecc83d24b7695dba0b545ffdac263ce5046f6e129de3bea1cb807d7d6ee9",
 			"license": "CC-BY-SA-4.0",
 			"urls": [
-				"bzz-raw://8a5e6eb857bf6a482aa61b52f24cbc292ba223c3bdc4af87616197b4c5c22ba4",
-				"dweb:/ipfs/QmeSbxAWqdCFtrukvDTYCkPgtF6wLwkrwJyvpbV5qURZFv"
+				"bzz-raw://54adb7f0623165d693f7b928f5401e61790fad0b226d0d2bf88449b561f0a555",
+				"dweb:/ipfs/QmQinaUq4rL5idvJSuXNJik6prrNEX9JVUmjGbr85ujdpP"
 			]
 		}
 	},
