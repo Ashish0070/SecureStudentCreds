@@ -137,23 +137,6 @@ var schoolABI = [
 		"name": "getSchools",
 		"outputs": [
 			{
-				"components": [
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "designation",
-						"type": "string"
-					}
-				],
-				"internalType": "struct TestUser.user[]",
-				"name": "",
-				"type": "tuple[]"
-			},
-			{
 				"internalType": "address[]",
 				"name": "",
 				"type": "address[]"
