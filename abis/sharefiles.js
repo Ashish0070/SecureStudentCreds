@@ -46,6 +46,11 @@ var shareFilesABI = [
 				"internalType": "address",
 				"name": "_student",
 				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_company",
+				"type": "address"
 			}
 		],
 		"name": "getSharedFilesCount",
@@ -75,6 +80,30 @@ var shareFilesABI = [
 		"name": "shareFileIndex",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "sharedCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
