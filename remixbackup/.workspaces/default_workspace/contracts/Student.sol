@@ -8,22 +8,20 @@ import  './TestUser.sol';
 contract Student is TestUser{
     
     FileContract public fc;  //all files owned by a student
-    address public FileContractAddress = 0x9841B68a56c7E70EAa8675AAE8629600dfBEBC96;  //set it later(deployed one)
+    address public FileContractAddress = 0x2B382c265570168FE9F2a227C8B9B0B8c4E5FDA8;  //set it later(deployed one)
     
     constructor() public {
         //create an instance of File Contract using the deployed File Contract's address
         fc = FileContract(FileContractAddress);
     }
     
-    //get your number of files
+    // return no of files owned by this student
     function getFileCount() public view returns (uint) {
-        // return no of files owned by this student
         return fc.getFileCount(msg.sender);
     }
     
-    //get your files
+    // return all files owned by this student
     function getFile() public view returns (FileContract.File[] memory) {
-        // return all files owned by this student
         return fc.getFile(msg.sender);
     }
     
