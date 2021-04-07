@@ -7,6 +7,7 @@ pragma experimental ABIEncoderV2;
 
 contract FileContract {
    
+    // File details
     struct File {
         string ipfsHash;
         string title;
@@ -18,7 +19,7 @@ contract FileContract {
     mapping(address => uint) public fileCount;
     uint public curr;
     
-    
+    //upload files
     function uploadFile(string memory ipfsHash, string memory title, string memory description, address _owner) public {
         files.push(File(ipfsHash, title, description));
         ownerOfFiles.push(_owner);
@@ -26,12 +27,12 @@ contract FileContract {
         curr++;
     }
     
-    
+    //get file count under owner
     function getFileCount(address _owner) public view returns (uint) {
         return fileCount[_owner];
     } 
     
-    
+    //get all files of a student
     function getFile(address _owner) public view returns (File[] memory) {
         File[] memory result = new File[](fileCount[_owner]);
         uint id=0;
