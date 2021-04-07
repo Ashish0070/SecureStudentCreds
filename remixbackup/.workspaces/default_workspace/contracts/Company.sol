@@ -10,8 +10,8 @@ contract Company is TestUser{
     School public s;
     
     //set later
-    address public fca = 0x9841B68a56c7E70EAa8675AAE8629600dfBEBC96;
-    address public sa = 0xaa8bF279540b0341d310bCD91f0cDe0C9A9A4694;
+    address public fca = 0x2B382c265570168FE9F2a227C8B9B0B8c4E5FDA8;
+    address public sa = 0xAdfb83c601c034Cf4CD408acfd40cb2D9Ce9f962;
     
     constructor() public {
         fc = FileContract(fca);
