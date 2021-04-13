@@ -1,5 +1,23 @@
 var shareFilesABI = [
 	{
+		"inputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "toBeShared",
+				"type": "uint256[]"
+			},
+			{
+				"internalType": "address",
+				"name": "_company",
+				"type": "address"
+			}
+		],
+		"name": "shareFileIndex",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
@@ -67,32 +85,9 @@ var shareFilesABI = [
 	{
 		"inputs": [
 			{
-				"internalType": "uint256[]",
-				"name": "toBeShared",
-				"type": "uint256[]"
-			},
-			{
-				"internalType": "address",
-				"name": "_company",
-				"type": "address"
-			}
-		],
-		"name": "shareFileIndex",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
+				"internalType": "uint256",
 				"name": "",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
+				"type": "uint256"
 			}
 		],
 		"name": "sharedCount",
@@ -109,14 +104,9 @@ var shareFilesABI = [
 	{
 		"inputs": [
 			{
-				"internalType": "address",
+				"internalType": "uint256",
 				"name": "",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
+				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
