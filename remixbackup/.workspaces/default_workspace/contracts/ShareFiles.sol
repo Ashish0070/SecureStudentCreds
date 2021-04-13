@@ -31,7 +31,11 @@ contract ShareFiles {
     //share the specified files with the Company
     function shareFileIndex (uint[] memory toBeShared, address _company) public {
         uint hash = uint(keccak256(abi.encodePacked(msg.sender))) + uint(keccak256(abi.encodePacked(_company)));
-        sharedFiles[hash] = toBeShared;
+        uint[] storage alreadyShared = sharedFiles[hash];
+        for(uint i=0;i<toBeShared.length;i++){
+            alreadyShared.push(toBeShared[i]);
+        }
+        sharedFiles[hash] = alreadyShared;
         sharedCount[hash] += toBeShared.length;
     }
     
