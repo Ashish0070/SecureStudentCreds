@@ -19,8 +19,8 @@ contract ShareFiles {
     address fa = 0x2B382c265570168FE9F2a227C8B9B0B8c4E5FDA8;
     address ca = 0xdAf4E46101c83F7b27383272fb114dfF3F904576;
 
-    mapping(address => mapping(address => uint[])) public sharedFiles;
-    mapping(address => mapping(address => uint)) public sharedCount;
+    mapping(uint => uint[]) public sharedFiles;
+    mapping(uint => uint) public sharedCount;
     
     constructor() public {
         s = Student(sa);
@@ -30,18 +30,21 @@ contract ShareFiles {
     
     //share the specified files with the Company
     function shareFileIndex (uint[] memory toBeShared, address _company) public {
-        sharedFiles[msg.sender][_company] = toBeShared;
-        sharedCount[msg.sender][_company] += toBeShared.length;
+        uint hash = uint(keccak256(abi.encodePacked(msg.sender))) + uint(keccak256(abi.encodePacked(_company)));
+        sharedFiles[hash] = toBeShared;
+        sharedCount[hash] += toBeShared.length;
     }
     
     //how many files shared with a Company
     function getSharedFilesCount (address _student, address _company) public view returns(uint) {
-        return sharedCount[_student][_company];
+        uint hash = uint(keccak256(abi.encodePacked(_student))) + uint(keccak256(abi.encodePacked(_company)));
+        return sharedCount[hash];
     }
     
     //companies accessing shared files indices by a student
     function getSharedFiles (address _student) private view returns(uint[] memory) {
-        return sharedFiles[_student][msg.sender];
+        uint hash = uint(keccak256(abi.encodePacked(msg.sender))) + uint(keccak256(abi.encodePacked(_student)));
+        return sharedFiles[hash];
     }
     
     //get all files shared by a student to this Company(security loophole right now)
