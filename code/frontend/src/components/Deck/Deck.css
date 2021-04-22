@@ -1,0 +1,36 @@
+.Deck {
+    width: 82%;
+    height: 87%;
+    padding: 3%;
+    overflow-y: scroll;
+}
+
+.Deck .headerRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 2%;
+}
+
+.Deck .addContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.Deck .MuiTextField-root {
+    width: 80%;
+}
+
+.Deck .addButton {
+    margin-left: 2%;
+    background-color: #3B55E6;
+    color: white;
+    padding: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 20px;
+    cursor: pointer;
+}

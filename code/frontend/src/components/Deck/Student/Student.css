@@ -1,0 +1,9 @@
+.studentContainer {
+    width: 100%;
+    height: 100%;
+}
+
+.studentContainer .topRow {
+    display: flex;
+    margin-bottom: 2%;
+}
