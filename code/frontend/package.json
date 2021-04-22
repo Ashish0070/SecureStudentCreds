@@ -2,7 +2,7 @@
   "name": "blockchain-project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://apoorvsadana.github.io/blockchain-project",
+  "homepage": "http://ashish0070.github.io/SecureStudentsCreds",
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@phuocng/react-pdf-viewer": "^1.7.0",
@@ -58,5 +58,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
   }
 }
