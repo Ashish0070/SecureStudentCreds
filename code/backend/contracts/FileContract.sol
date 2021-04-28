@@ -3,44 +3,46 @@
 pragma solidity ^0.6.0;
 pragma experimental ABIEncoderV2;
 
-
-//Stores all files owned by a particular student
+//Stores all files 
 
 contract FileContract {
    
+    // File details
     struct File {
-        bytes ipfsHash;
+        string ipfsHash;
         string title;
         string description;
     }
     
-    File[] public ownerToFiles;
-    mapping(address => uint) public filesUnderOwner;
-    mapping(uint => address) public ownerOfFiles;
+    File[] public files;
+    address[] public ownerOfFiles;
     mapping(address => uint) public fileCount;
-    uint curr;
+    uint public curr;
     
-    function uploadFile(bytes memory ipfsHash, string memory title, string memory description) public {
-        //upload a file
-        File memory newFile;
-        newFile = File(ipfsHash, title, description);
-        
-        ownerToFiles[curr] = newFile;
-        filesUnderOwner[msg.sender] = curr;
-        ownerOfFiles[curr] = msg.sender;
-        fileCount[msg.sender]++;
-        
+    //upload files
+    function uploadFile(string memory ipfsHash, string memory title, string memory description, address _owner) public {
+        files.push(File(ipfsHash, title, description));
+        ownerOfFiles.push(_owner);
+        fileCount[_owner]++;
         curr++;
     }
     
-    function getFileCount() public view returns (uint) {
-        //get file count
-        return fileCount[msg.sender];
+    //get file count under owner
+    function getFileCount(address _owner) public view returns (uint) {
+        return fileCount[_owner];
     } 
     
-    function getFile() public view returns (File memory) {
-        uint id = filesUnderOwner[msg.sender];
-        return ownerToFiles[id];
+    //get all files of a student
+    function getFile(address _owner) public view returns (File[] memory) {
+        File[] memory result = new File[](fileCount[_owner]);
+        uint id=0;
+        for(uint i=0;i<curr;i++){
+            if(ownerOfFiles[i]==_owner){
+                result[id] = files[i];
+                id++;
+            }
+        }
+        return result;
     }
     
 }
