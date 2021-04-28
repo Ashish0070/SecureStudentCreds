@@ -3,67 +3,160 @@
 pragma solidity ^0.6.0;
 pragma experimental ABIEncoderV2;
 
-contract User {
+contract TestUser {
     
     struct user{
         string name;
         string designation;
     }
     
-    user[] public addressToUser; //for storing all user structs
-    mapping(address => bool) public userExists;  //if for an address user exists;
-    mapping(uint => address) public addressOfUser; //id of user to address
-    mapping(address => uint) userOfAddress; //address to id of user
-    uint totalUsers; //total users
+    user[] public users; //for storing all user structs
+    address[] public addressOfUser; //id of user to address
+    uint public totalUsers; //total users
     
-    //comparing structs
-    function equals(user memory _first,user memory _second) internal pure returns (bool) {
-        // Just compare the output of hashing all fields packed
-        return(keccak256(abi.encodePacked(_first.name, _first.designation)) == keccak256(abi.encodePacked(_second.name, _second.designation)));
-    }
+    user[] public students;
+    user[] public schools;
+    user[] public companies;
+    
+    address[] public addressOfStudents;
+    address[] public addressOfSchools;
+    address[] public addressOfCompanies;
+    
+    uint public totalStudents;
+    uint public totalSchools;
+    uint public totalCompanies;
 
     
-    function hasUser() public view returns (bool) { 
-        return userExists[msg.sender];
+    //misc string equality
+    function equalsString(string memory _first,string memory _second) public pure returns (bool) {
+        // Just compare the output of hashing all fields packed
+        return keccak256(abi.encodePacked(_first)) == keccak256(abi.encodePacked(_second));
     }
     
     
+    function hasUser(address _a) public view returns (bool) { 
+        for(uint i=0;i<this.totalUsers();i++)
+            if(this.addressOfUser(i)==_a)
+                return true;
+        
+        return false;
+    }
+    
+    //student user created or not
+    function hasStudentUser(address _a) public view returns (bool) {
+        for(uint i=0;i<totalStudents;i++)
+            if(addressOfStudents[i]==_a)
+                return true;
+        
+        return false;
+    }
+   
+    //school user created or not 
+    function hasSchoolUser(address _a) public view returns (bool) {
+        for(uint i=0;i<totalSchools;i++)
+            if(addressOfSchools[i]==_a)
+                return true;
+        
+        return false;
+    }
+    
+     //company user created or not
+    function hasCompanyUser(address _a) public view returns (bool) {
+        for(uint i=0;i<totalCompanies;i++)
+            if(addressOfCompanies[i]==_a)
+                return true;
+        
+        return false;
+    }
+    
+    
+    //create user and put into correct array acc to designation
     function createUser(string memory name, string memory designation) public {
         
         //check if user from this address already exists
-        require(userExists[msg.sender]);
+        require(!hasUser(msg.sender));
         
         //create a new user
-        user memory u = user(name, designation);
-        
-        
-        uint id = totalUsers;
-        addressOfUser[id] = msg.sender;
-        
-        userExists[msg.sender] = true;
-        
-        addressToUser[id] = u;
-        
-        userOfAddress[msg.sender] = id;
-        
+        users.push(user(name, designation));
+        addressOfUser.push(msg.sender);
         totalUsers++;
-    }
-    
-    
-    function getUserAddress(user memory u) public view returns (address) {
-        uint id = 0;
-        for(;id<totalUsers;id++){
-            if(equals(u, addressToUser[id])){
-                break;
-            }
+        
+        if(equalsString(designation, "Student")){
+            students.push(user(name, designation));
+            addressOfStudents.push(msg.sender);
+            totalStudents++;
         }
         
-        return addressOfUser[id];
+        if(equalsString(designation, "School")){
+            schools.push(user(name, designation));
+            addressOfSchools.push(msg.sender);
+            totalSchools++;
+        }
+        
+        if(equalsString(designation, "Company")){
+            companies.push(user(name, designation));
+            addressOfCompanies.push(msg.sender);
+            totalCompanies++;
+        }
     }
     
-    function getUser() public view returns (user memory) {
-        return addressToUser[userOfAddress[msg.sender]];
+    //return address of user
+    function getUserAddress(string memory name, string memory designation) public view returns (address) {
+        for(uint i=0;i<totalUsers;i++)
+            if(equalsString(name, users[i].name) && equalsString(designation, users[i].designation))
+                return this.addressOfUser(i);
     }
     
+    //return address of student
+    function getStudentAddress(string memory name, string memory designation) public view returns (address) {
+        require(equalsString(designation, "Student"));
+        for(uint i=0;i<totalStudents;i++)
+            if(equalsString(name, students[i].name) && equalsString(designation, students[i].designation))
+                return addressOfStudents[i];
+    }
+    
+    //return address of School
+    function getSchoolAddress(string memory name, string memory designation) public view returns (address) {
+        require(equalsString(designation, "School"));
+        for(uint i=0;i<totalSchools;i++)
+            if(equalsString(name, schools[i].name) && equalsString(designation, schools[i].designation))
+                return addressOfSchools[i];
+    }
+    
+    //return address of Company
+    function getCompanyAddress(string memory name, string memory designation) public view returns (address) {
+        require(equalsString(designation, "Company"));
+        for(uint i=0;i<totalCompanies;i++)
+            if(equalsString(name, companies[i].name) && equalsString(designation, companies[i].designation))
+                return addressOfCompanies[i];
+    }
+    
+    //get user struct from address
+    function getUser(address _a) public view returns (user memory) {
+        for(uint i=0;i<totalUsers;i++)
+            if(this.addressOfUser(i)==_a)
+                return users[i];
+    }
+    
+    //get student details from address
+    function getStudentUser(address _student) public view returns (user memory) {
+        for(uint i=0;i<totalStudents;i++)
+            if(addressOfStudents[i]==_student)
+                return students[i];
+    }
+    
+    //get school details from address
+    function getSchoolUser(address _school) public view returns (user memory) {
+        for(uint i=0;i<totalSchools;i++)
+            if(addressOfSchools[i]==_school)
+                return schools[i];
+    }
+    
+    //get student details from address
+    function getCompanyUser(address _company) public view returns (user memory) {
+        for(uint i=0;i<totalCompanies;i++)
+            if(addressOfCompanies[i]==_company)
+                return companies[i];
+    }
     
 }
